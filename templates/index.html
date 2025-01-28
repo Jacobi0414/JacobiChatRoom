@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flask 实时聊天室</title>
+    <link href="https://cdn.bootcdn.net/ajax/libs/bootstrap/5.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row vh-100">
+            <!-- 侧边栏：在线用户列表 -->
+            <div class="col-md-3 col-lg-2 sidebar">
+                <div class="p-3">
+                    <h4 class="text-center mb-4">在线用户</h4>
+                    <div id="userList" class="list-group">
+                        <!-- 用户列表将通过JavaScript动态添加 -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- 主聊天区域 -->
+            <div class="col-md-9 col-lg-10 main-content">
+                <div class="chat-container d-flex flex-column h-100">
+                    <!-- 聊天记录区域 -->
+                    <div id="messageArea" class="flex-grow-1 p-3 overflow-auto">
+                        <!-- 消息将通过JavaScript动态添加 -->
+                    </div>
+
+                    <!-- 输入区域 -->
+                    <div class="input-area p-3 border-top">
+                        <form id="messageForm" class="d-flex gap-2">
+                            <input type="text" id="messageInput" class="form-control" placeholder="输入消息..." autocomplete="off">
+                            <label for="imageInput" class="btn btn-outline-secondary" title="上传图片">
+                                <i class="fas fa-image"></i>
+                                <input type="file" id="imageInput" class="d-none" accept="image/*">
+                            </label>
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.bootcdn.net/ajax/libs/socket.io/4.7.2/socket.io.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/bootstrap/5.3.1/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/marked/9.1.2/marked.min.js"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html> 
