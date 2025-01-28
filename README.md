@@ -38,26 +38,6 @@
 - **Socket.IO Client**
 - **Bootstrap 5** - Responsive design
 
-## 📁 Project Structure
-
-\`\`\`
-chatroom/
-├── static/
-│   ├── css/
-│   │   └── style.css
-│   └── js/
-│       └── main.js
-├── templates/
-│   └── index.html
-├── data/
-│   ├── chat_history.db
-│   └── names.txt
-├── main.py
-├── config.py
-├── requirements.txt
-└── README.md
-\`\`\`
-
 ## 🚀 Getting Started
 
 ### Prerequisites
